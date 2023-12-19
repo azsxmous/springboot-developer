@@ -16,6 +16,4 @@ public class TestController {
         List<Member> members = testService.getAllMembers();
         return members;
     }
-
-
 }
