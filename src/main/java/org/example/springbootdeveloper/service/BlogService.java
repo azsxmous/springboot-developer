@@ -23,5 +23,15 @@ public class BlogService {
     public List<Article> findAll() {
         return blogRepository.findAll();
     }
+    // 특정 글 조회
+    public Article findById(long id) {
+        return blogRepository.findById(id) // 엔티티가 없을 경우 예외 발생
+                .orElseThrow(() -> new IllegalArgumentException("not found : " + id));
+    }
+
+    // 글 삭제
+    public void delete(long id) {
+        blogRepository.deleteById(id);
+    }
 
 }
